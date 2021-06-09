@@ -1,0 +1,244 @@
+/**
+ * Site header
+ */
+.site-header {
+  border-bottom: 1px solid $grey-color;
+  min-height: 56px;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+.site-title {
+  @include relative-font-size(1.425);
+  font-weight: 300;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  line-height: 56px;
+
+  & {
+    color: $brand-color;
+  }
+}
+
+.site-nav {
+    float: right;
+    line-height: 56px;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $brand-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  color: $brand-color;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1 0 auto;
+}
+
+.page-heading {
+  @include relative-font-size(1.225);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: 0;
+  line-height: 1.15;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.625);
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(1.75);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(2);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.375);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.625);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.5);
+    }
+  }
+}
+
+
+
+/**
+ * Home page
+ */
+#nakamura,
+#furui {
+  float: left;
+  padding: 90px;
+}
+
+#okamoto,
+#azuki {
+  text-align: right;
+  padding: 90px;
+}
+
+@include media-query($on-palm) {
+  #nakamura,
+  #okamoto,
+  #furui,
+  #azuki {
+    display: none;
+  }
+}
+
+
+
+/**
+ * Error page
+ */
+ins {
+  color: $grey-color;
+  text-decoration: none;
+}
+
+
+
+/**
+ * Photos page
+ */
+.photos-left {
+  float: left;
+  width: calc(50% - (#{$spacing-unit}) - 3px * 2);
+  padding: $spacing-unit / 2;
+}
+
+.photos-right {
+  float: right;
+  width: calc(50% - (#{$spacing-unit}) - 3px * 2);
+  padding: $spacing-unit / 2;
+}
+
+@include media-query($on-palm) {
+  .photos-left,
+  .photos-right {
+    float: none;
+    width: calc(100% - (#{$spacing-unit}) - 3px * 2);
+  }
+}
